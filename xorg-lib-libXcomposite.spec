@@ -18,6 +18,7 @@ BuildRequires:	xorg-lib-libXfixes-devel
 BuildRequires:	libtool
 BuildRequires:	pkg-config
 BuildRequires:	xorg-util-util-macros
+Obsoletes:	libXcomposite
 BuildRoot:	%{tmpdir}/libXcomposite-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -37,6 +38,7 @@ Requires:	xorg-lib-libXcomposite = %{version}-%{release}
 Requires:	xorg-proto-compositeproto-devel
 Requires:	xorg-lib-libXext-devel
 Requires:	xorg-lib-libXfixes-devel
+Obsoletes:	libXcomposite-devel
 
 %description devel
 X Composite extension library.
@@ -56,6 +58,7 @@ Summary:	Static libXcomposite libraries
 Summary(pl):	Biblioteki statyczne libXcomposite
 Group:		Development/Libraries
 Requires:	xorg-lib-libXcomposite-devel = %{version}-%{release}
+Obsoletes:	libXcomposite-static
 
 %description static
 X Composite extension library.
