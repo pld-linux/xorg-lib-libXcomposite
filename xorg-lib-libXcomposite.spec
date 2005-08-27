@@ -19,8 +19,6 @@ BuildRequires:	xorg-util-util-macros
 Obsoletes:	libXcomposite
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-
 %description
 X Composite extension library.
 
