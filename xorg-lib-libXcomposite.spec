@@ -16,7 +16,7 @@ BuildRequires:	xorg-proto-compositeproto-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXfixes-devel
 BuildRequires:	libtool
-BuildRequires:	pkg-config
+BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-util-util-macros
 Obsoletes:	libXcomposite
 BuildRoot:	%{tmpdir}/libXcomposite-%{version}-root-%(id -u -n)
