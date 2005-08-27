@@ -1,5 +1,3 @@
-
-#
 Summary:	X Composite extension library
 Summary(pl):	Biblioteka rozszerzenia X Composite
 Name:		xorg-lib-libXcomposite
@@ -12,14 +10,14 @@ Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libXcomposite-%{version}.ta
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	xorg-proto-compositeproto-devel
-BuildRequires:	xorg-lib-libXext-devel
-BuildRequires:	xorg-lib-libXfixes-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
+BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-lib-libXfixes-devel
+BuildRequires:	xorg-proto-compositeproto-devel
 BuildRequires:	xorg-util-util-macros
 Obsoletes:	libXcomposite
-BuildRoot:	%{tmpdir}/libXcomposite-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 
@@ -29,15 +27,14 @@ X Composite extension library.
 %description -l pl
 Biblioteka rozszerzenia X Composite.
 
-
 %package devel
 Summary:	Header files libXcomposite development
 Summary(pl):	Pliki nag³ówkowe do biblioteki libXcomposite
 Group:		X11/Development/Libraries
-Requires:	xorg-lib-libXcomposite = %{version}-%{release}
-Requires:	xorg-proto-compositeproto-devel
+Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXext-devel
 Requires:	xorg-lib-libXfixes-devel
+Requires:	xorg-proto-compositeproto-devel
 Obsoletes:	libXcomposite-devel
 
 %description devel
@@ -52,12 +49,11 @@ Biblioteka rozszerzenia X Composite.
 Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
 u¿ywaj±cych biblioteki libXcomposite.
 
-
 %package static
-Summary:	Static libXcomposite libraries
-Summary(pl):	Biblioteki statyczne libXcomposite
-Group:		Development/Libraries
-Requires:	xorg-lib-libXcomposite-devel = %{version}-%{release}
+Summary:	Static libXcomposite library
+Summary(pl):	Biblioteka statyczna libXcomposite
+Group:		X11/Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libXcomposite-static
 
 %description static
@@ -70,10 +66,8 @@ Biblioteka rozszerzenia X Composite.
 
 Pakiet zawiera statyczn± bibliotekê libXcomposite.
 
-
 %prep
 %setup -q -n libXcomposite-%{version}
-
 
 %build
 %{__libtoolize}
@@ -97,20 +91,17 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog
-%attr(755,root,wheel) %{_libdir}/libXcomposite.so.*
-
+%attr(755,root,root) %{_libdir}/libXcomposite.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/X11/extensions/*.h
+%attr(755,root,root) %{_libdir}/libXcomposite.so
 %{_libdir}/libXcomposite.la
-%attr(755,root,wheel) %{_libdir}/libXcomposite.so
+%{_includedir}/X11/extensions/*.h
 %{_pkgconfigdir}/xcomposite.pc
-
 
 %files static
 %defattr(644,root,root,755)
