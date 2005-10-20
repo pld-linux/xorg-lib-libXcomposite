@@ -1,20 +1,20 @@
 Summary:	X Composite extension library
 Summary(pl):	Biblioteka rozszerzenia X Composite
 Name:		xorg-lib-libXcomposite
-Version:	0.2.0
-Release:	0.03
+Version:	0.2.1
+Release:	0.1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libXcomposite-%{version}.tar.bz2
-# Source0-md5:	906dad7523e8797e25c0874223292357
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/lib/libXcomposite-%{version}.tar.bz2
+# Source0-md5:	d3bec9b6a45117b9c8fa509829c2946f
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXfixes-devel
-BuildRequires:	xorg-proto-compositeproto-devel
+BuildRequires:	xorg-proto-compositeproto-devel >= 0.2
 BuildRequires:	xorg-util-util-macros
 Obsoletes:	libXcomposite
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,7 +32,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXext-devel
 Requires:	xorg-lib-libXfixes-devel
-Requires:	xorg-proto-compositeproto-devel
+Requires:	xorg-proto-compositeproto-devel >= 0.2
 Obsoletes:	libXcomposite-devel
 
 %description devel
@@ -91,7 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog
+%doc AUTHORS COPYING ChangeLog
 %attr(755,root,root) %{_libdir}/libXcomposite.so.*.*.*
 
 %files devel
