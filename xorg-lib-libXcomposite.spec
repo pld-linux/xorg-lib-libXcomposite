@@ -26,8 +26,8 @@ X Composite extension library.
 Biblioteka rozszerzenia X Composite.
 
 %package devel
-Summary:	Header files libXcomposite development
-Summary(pl):	Pliki nag³ówkowe do biblioteki libXcomposite
+Summary:	Header files for libXcomposite library
+Summary(pl):	Pliki nag³ówkowe biblioteki libXcomposite
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXext-devel
@@ -39,7 +39,7 @@ Obsoletes:	libXcomposite-devel
 X Composite extension library.
 
 This package contains the header files needed to develop programs that
-use these libXcomposite.
+use libXcomposite.
 
 %description devel -l pl
 Biblioteka rozszerzenia X Composite.
