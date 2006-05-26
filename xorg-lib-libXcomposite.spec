@@ -14,7 +14,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXfixes-devel
-BuildRequires:	xorg-proto-compositeproto-devel >= 0.2
+BuildRequires:	xorg-proto-compositeproto-devel >= 0.3
 BuildRequires:	xorg-util-util-macros
 Obsoletes:	libXcomposite
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,7 +32,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXext-devel
 Requires:	xorg-lib-libXfixes-devel
-Requires:	xorg-proto-compositeproto-devel >= 0.2
+Requires:	xorg-proto-compositeproto-devel >= 0.3
 Obsoletes:	libXcomposite-devel
 
 %description devel
