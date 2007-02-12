@@ -1,5 +1,5 @@
 Summary:	X Composite extension library
-Summary(pl):	Biblioteka rozszerzenia X Composite
+Summary(pl.UTF-8):   Biblioteka rozszerzenia X Composite
 Name:		xorg-lib-libXcomposite
 Version:	0.3.1
 Release:	3
@@ -22,12 +22,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 X Composite extension library.
 
-%description -l pl
+%description -l pl.UTF-8
 Biblioteka rozszerzenia X Composite.
 
 %package devel
 Summary:	Header files for libXcomposite library
-Summary(pl):	Pliki nag³ówkowe biblioteki libXcomposite
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libXcomposite
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXext-devel
@@ -41,15 +41,15 @@ X Composite extension library.
 This package contains the header files needed to develop programs that
 use libXcomposite.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Biblioteka rozszerzenia X Composite.
 
-Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
-u¿ywaj±cych biblioteki libXcomposite.
+Pakiet zawiera pliki nagÅ‚Ã³wkowe niezbÄ™dne do kompilowania programÃ³w
+uÅ¼ywajÄ…cych biblioteki libXcomposite.
 
 %package static
 Summary:	Static libXcomposite library
-Summary(pl):	Biblioteka statyczna libXcomposite
+Summary(pl.UTF-8):   Biblioteka statyczna libXcomposite
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libXcomposite-static
@@ -59,10 +59,10 @@ X Composite extension library.
 
 This package contains the static libXcomposite library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka rozszerzenia X Composite.
 
-Pakiet zawiera statyczn± bibliotekê libXcomposite.
+Pakiet zawiera statycznÄ… bibliotekÄ™ libXcomposite.
 
 %prep
 %setup -q -n libXcomposite-%{version}
