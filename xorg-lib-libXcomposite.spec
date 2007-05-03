@@ -1,12 +1,12 @@
 Summary:	X Composite extension library
 Summary(pl.UTF-8):	Biblioteka rozszerzenia X Composite
 Name:		xorg-lib-libXcomposite
-Version:	0.3.1
-Release:	3
+Version:	0.3.2
+Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXcomposite-%{version}.tar.bz2
-# Source0-md5:	a80650d660486ea7bb2e5fd84a83799a
+# Source0-md5:	50dd31bed383280433404a405d3dcf8f
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -100,6 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libXcomposite.la
 %{_includedir}/X11/extensions/*.h
 %{_pkgconfigdir}/xcomposite.pc
+%{_mandir}/man3/*
 
 %files static
 %defattr(644,root,root,755)
