@@ -32,7 +32,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXext-devel
 Requires:	xorg-lib-libXfixes-devel
-Requires:	xorg-proto-compositeproto-devel >= 0.3
+Requires:	xorg-proto-compositeproto-devel >= 0.4
 Obsoletes:	libXcomposite-devel
 
 %description devel
