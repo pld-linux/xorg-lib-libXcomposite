@@ -1,5 +1,5 @@
-Summary:	X Composite extension library
-Summary(pl.UTF-8):	Biblioteka rozszerzenia X Composite
+Summary:	X Composite extension client library
+Summary(pl.UTF-8):	Biblioteka kliencka rozszerzenia X Composite
 Name:		xorg-lib-libXcomposite
 Version:	0.4.1
 Release:	1
@@ -15,15 +15,15 @@ BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXfixes-devel
 BuildRequires:	xorg-proto-compositeproto-devel >= 0.4
-BuildRequires:	xorg-util-util-macros
+BuildRequires:	xorg-util-util-macros >= 1.3
 Obsoletes:	libXcomposite
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-X Composite extension library.
+X Composite extension client library.
 
 %description -l pl.UTF-8
-Biblioteka rozszerzenia X Composite.
+Biblioteka kliencka rozszerzenia X Composite.
 
 %package devel
 Summary:	Header files for libXcomposite library
@@ -36,13 +36,13 @@ Requires:	xorg-proto-compositeproto-devel >= 0.4
 Obsoletes:	libXcomposite-devel
 
 %description devel
-X Composite extension library.
+X Composite extension client library.
 
 This package contains the header files needed to develop programs that
 use libXcomposite.
 
 %description devel -l pl.UTF-8
-Biblioteka rozszerzenia X Composite.
+Biblioteka kliencka rozszerzenia X Composite.
 
 Pakiet zawiera pliki nagłówkowe niezbędne do kompilowania programów
 używających biblioteki libXcomposite.
@@ -55,12 +55,12 @@ Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libXcomposite-static
 
 %description static
-X Composite extension library.
+X Composite extension client library.
 
 This package contains the static libXcomposite library.
 
 %description static -l pl.UTF-8
-Biblioteka rozszerzenia X Composite.
+Biblioteka kliencka rozszerzenia X Composite.
 
 Pakiet zawiera statyczną bibliotekę libXcomposite.
 
@@ -91,16 +91,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog
+%doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_libdir}/libXcomposite.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libXcomposite.so.1
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libXcomposite.so
 %{_libdir}/libXcomposite.la
-%{_includedir}/X11/extensions/*.h
+%{_includedir}/X11/extensions/Xcomposite.h
 %{_pkgconfigdir}/xcomposite.pc
-%{_mandir}/man3/*
+%{_mandir}/man3/XComposite*.3x*
+%{_mandir}/man3/Xcomposite.3x*
 
 %files static
 %defattr(644,root,root,755)
