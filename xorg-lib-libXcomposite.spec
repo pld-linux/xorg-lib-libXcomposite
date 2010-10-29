@@ -1,21 +1,22 @@
 Summary:	X Composite extension client library
 Summary(pl.UTF-8):	Biblioteka kliencka rozszerzenia X Composite
 Name:		xorg-lib-libXcomposite
-Version:	0.4.2
+Version:	0.4.3
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXcomposite-%{version}.tar.bz2
-# Source0-md5:	e38dc98509149083f6c31b49b484e63c
+# Source0-md5:	a60e0b5c276d0aa9e2d3b982c98f61c8
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	xmlto >= 0.0.20
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXfixes-devel
 BuildRequires:	xorg-proto-compositeproto-devel >= 0.4
-BuildRequires:	xorg-util-util-macros >= 1.6
+BuildRequires:	xorg-util-util-macros >= 1.8
 Obsoletes:	libXcomposite
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
