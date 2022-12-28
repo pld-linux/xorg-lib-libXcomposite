@@ -1,23 +1,26 @@
 Summary:	X Composite extension client library
 Summary(pl.UTF-8):	Biblioteka kliencka rozszerzenia X Composite
 Name:		xorg-lib-libXcomposite
-Version:	0.4.5
+Version:	0.4.6
 Release:	1
 License:	MIT
 Group:		X11/Libraries
-Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXcomposite-%{version}.tar.bz2
-# Source0-md5:	3fa0841ea89024719b20cd702a9b54e0
+Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXcomposite-%{version}.tar.xz
+# Source0-md5:	af0a5f0abb5b55f8411cd738cf0e5259
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xmlto >= 0.0.20
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXfixes-devel
 BuildRequires:	xorg-proto-compositeproto-devel >= 0.4
+BuildRequires:	xorg-proto-xproto-devel >= 7.0.22
 BuildRequires:	xorg-util-util-macros >= 1.8
-Obsoletes:	libXcomposite
+BuildRequires:	xz
+Obsoletes:	libXcomposite < 1.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,7 +37,8 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libX11-devel
 Requires:	xorg-lib-libXfixes-devel
 Requires:	xorg-proto-compositeproto-devel >= 0.4
-Obsoletes:	libXcomposite-devel
+Requires:	xorg-proto-xproto-devel >= 7.0.22
+Obsoletes:	libXcomposite-devel < 1.1
 
 %description devel
 X Composite extension client library.
@@ -53,7 +57,7 @@ Summary:	Static libXcomposite library
 Summary(pl.UTF-8):	Biblioteka statyczna libXcomposite
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
-Obsoletes:	libXcomposite-static
+Obsoletes:	libXcomposite-static < 1.1
 
 %description static
 X Composite extension client library.
