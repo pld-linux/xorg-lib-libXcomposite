@@ -2,7 +2,7 @@ Summary:	X Composite extension client library
 Summary(pl.UTF-8):	Biblioteka kliencka rozszerzenia X Composite
 Name:		xorg-lib-libXcomposite
 Version:	0.4.6
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Libraries
 Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXcomposite-%{version}.tar.xz
@@ -88,6 +88,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libXcomposite.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -103,7 +105,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libXcomposite.so
-%{_libdir}/libXcomposite.la
 %{_includedir}/X11/extensions/Xcomposite.h
 %{_pkgconfigdir}/xcomposite.pc
 %{_mandir}/man3/XComposite*.3*
